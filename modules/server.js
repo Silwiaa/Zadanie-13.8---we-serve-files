@@ -6,8 +6,7 @@ function start() {
     function onRequest(request, response) {
         console.log("Odebrano zapytanie".green);
         console.log("Zapytanie" + request.url + "odebrane");
-        
-        response.writeHead(200, {"Content-Type": "text/plain;charset-utf-8"});
+        response.writeHead(200, {"Content-Type": "text/plain;charset=utf-8"});
         
         switch (request.url) {
             case '/':
@@ -20,10 +19,12 @@ function start() {
             case '/show':
                 handlers.show(request, response);
                 break;
+            case '/style.css':
+                handlers.style(request,response);
+                break;
             default:
                 handlers.error(request.response);
         }
-       
     }
 http.createServer(onRequest).listen(9000);
 console.log("Uruchomiono server!".green);
