@@ -1,1 +1,2 @@
-var http = require('http');
+var http = require('http'),
+    colors = require('colors');
