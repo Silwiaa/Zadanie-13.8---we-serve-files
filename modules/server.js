@@ -20,10 +20,10 @@ function start() {
                 handlers.show(request, response);
                 break;
             case '/style.css':
-                handlers.style(request,response);
+                handlers.style(request, response);
                 break;
             default:
-                handlers.error(request.response);
+                handlers.error(request, response);
         }
     }
 http.createServer(onRequest).listen(9000);
